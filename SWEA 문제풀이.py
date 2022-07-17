@@ -270,14 +270,51 @@
 
 
 # [제출한 답]
+# a = int(input())
+
+# for i in range(1, a+1):
+
+#     b = int(input())
+#     c = ''
+#     for mu in range(0, b):
+#         d, e = input().split()
+#         c += d * int(e)
+
+#     print(f'#{i}')
+
+#     c = list(c)
+
+#     while len(c) > 10:
+#         for i in range(0,10):
+#             print(c[i],end = '')
+#         print()
+#         del c[0:10]
+#     for i in range(0,len(c)):
+#         print(c[i],end = '')
+#     print()
+
+# str들을 한 줄에 다 합친다.
+# 더한 str을 리스트화한다.
+# 리스트 중 0~9까지 프린트한다.
+# 리스트에서 삭제하는 코드 0~9를 삭제한다.
+# 리스트 갯수가 10미만이 될때까지 반복한다.
+# 나머지 리스트를 출력한다.
 
 
-
-
-
-
-
-
+# [다른 답]
+# t = int(input())                                  # t에 테스트 횟수 입력
+ 
+# for tc in range(1, t+1):                          # t만큼 반복   (반복이 끝날 때마다 tc증가)
+#     n = int(input())                              # n에 테스트 케이스 횟수
+#     document = ''                                 # document에 None 입력
+#     for _ in range(n):                            # n만큼 반복
+#         Ci, Ki = input().split()                  # Ci와 Ki에 글자와 수 입력
+#         document += Ci*int(Ki)                    # document에 글자와 수를 곱한 것들을 더해 한줄의 긴 글을 만듬
+         
+#     print('#{}'.format(tc))                       # format을 써서 {}에 tc값 대입한 후 print
+     
+#     for i in range(0, len(document), 10) :        # 0부터 documet의 길이까지 10 단위로 반복
+#         print(document[i:i+10])                   # 0~9, 10~19, 20~29 단위로 증가하면서 출력 / list내에 요소 갯수를 넘어가면 남아있는 것 모두 프린트
 
 
 
