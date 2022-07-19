@@ -354,7 +354,7 @@
 
 # for i in range(1, T + 1):
 
-#     N, M = map(int,input().split())  # N과 M은 range로 사용할 예정
+#     N, M = map(int,input().split())
 #     Ai = list(map(int, input().split()))
 #     Bj = list(map(int, input().split()))
 
@@ -386,29 +386,29 @@
 
 
 # [제출한 답2]
-# T = int(input())
+# T = int(input())                              # 테스트 케이스 인풋
 
-# for i in range(1, T + 1):
+# for i in range(1, T + 1):                     # T만큼 반복
 
-#     N, M = map(int,input().split())  # N과 M은 range로 사용할 예정
-#     Ai = list(map(int, input().split()))
-#     Bj = list(map(int, input().split()))
+#     N, M = map(int,input().split())           # N, M 인풋
+#     Ai = list(map(int, input().split()))      # Ai 인풋
+#     Bj = list(map(int, input().split()))      # Bj 인풋
 
-#     if M < N :
-#         M, N = N, M
+#     if M < N :                                # 큰 수(M)에서 작은 수(N)를 빼야하기 때문에
+#         M, N = N, M                           # N이 더 크면 둘을 교환
 #         Ai, Bj = Bj, Ai
 
-#     a = M - N
-#     b = 0
-#     d = []
+#     a = M - N                                 # 위치를 변경하는 횟수
+#     b = 0                                     # 마주 보는 것을 곱한 값을 더해줄 변수
+#     d = []                                    # 구한 값을 추가해줄 빈 리스트
     
-#     for j in range(0, a + 1):
-#         for k in range(0, N):
-#             c = int(Ai[k]) * (Bj[k + j])
-#             b += c
-#         d.append(b)
-#         b = 0
-#     print(f'#{i} {max(d)}')
+#     for j in range(0, a + 1):                 # 위치를 변경하는 횟수(a) + 위치 변경 전(1)
+#         for k in range(0, N):                 # N은 처음부터 끝까지 다 써야하기때문에 N만큼 반복
+#             c = int(Ai[k]) * (Bj[k + j])      # 각 자리수 곱하기
+#             b += c                            # 곱한 값을 더하기
+#         d.append(b)                           # 더한 값을 리스트에 추가
+#         b = 0                                 # b를 0으로 초기화
+#     print(f'#{i} {max(d)}')                   # 리스트 중 가장 큰 값을 출력
 
 
 # [다른 답1]
@@ -438,23 +438,23 @@
 #     print(f'#{test_case+1} {result}')
 
 
-# [다른 답2]
-# for i in range(int(input())):
-#     cnt=0
-#     a,b=list(map(int,input().split()))
-#     l=list(map(int,input().split()))
-#     k=list(map(int,input().split()))
-#     if a>b:
-#         a,b=b,a
+# # [다른 답2]
+# for i in range(int(input())):           # 테스트 케이스 인풋 / T만큼 반복
+#     cnt=0                               # cnt = 0
+#     a,b=list(map(int,input().split()))  # N, M 인풋
+#     l=list(map(int,input().split()))    # Ai 인풋
+#     k=list(map(int,input().split()))    # Bj 인풋
+#     if a>b:                             # 큰 수(b)에서 작은 수(a)를 빼야하기 때문에
+#         a,b=b,a                         # N이 더 커지면 N과 M, Ai와 Bj를 바꿈
 #         l,k=k,l
-#     o=0
-#     for j in range(b-a+1):
-#         p=0
-#         for t in range(a):
-#             p+=l[t]*k[t+j]
-#         if o<p:
-#             o=p
-#     print(f'#{i+1} {o}')
+#     o=0                                 # o = 0
+#     for j in range(b-a+1):              # M과 N의 차이만큼 반복
+#         p=0                             # p = 0
+#         for t in range(a):              # 작은 수만큼 반복
+#             p+=l[t]*k[t+j]              # p에 (작은 수의 각각의 요소 * 큰 수의 요소(한 칸씩 땡김))한 값을 더함
+#         if o<p:                         # p와 o를 비교해서 p가 더 크면 o에 값을 대입
+#             o=p                         # 가장 큰 수만 남기는 과정
+#     print(f'#{i+1} {o}')                # o를 프린트
 
 
 
