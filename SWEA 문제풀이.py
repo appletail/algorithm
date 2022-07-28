@@ -492,28 +492,28 @@
 
 # [제출한 답]
 
-# T = int(input())
+T = int(input())
 
-# for i in range(T):
-#     N = int(input())
+for i in range(T):
+    N = int(input())
 
-#     k = 1
-#     count = 0
-#     num_lst = [False] * 10
+    k = 1
+    count = 0
+    num_lst = [False] * 10
 
-#     while True:
-#         Nn = N * k
+    while True:
+        Nn = N * k
 
-#         Nn = str(Nn)
-#         for num in Nn:
-#             num_lst[int(num)] = True
+        Nn = str(Nn)
+        for num in Nn:
+            num_lst[int(num)] = True
 
-#         if num_lst.count(True) == 10:
-#             break
+        if num_lst.count(True) == 10:
+            break
 
-#         k += 1
+        k += 1
 
-#     print(f'#{i + 1} {Nn}')
+    print(f'#{i + 1} {Nn}')
 
 
 # [다른 답]
