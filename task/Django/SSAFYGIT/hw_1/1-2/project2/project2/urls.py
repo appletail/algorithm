@@ -1,4 +1,4 @@
-"""firstpjt URL Configuration
+"""project2 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -13,17 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.contrib import admin
 from django.urls import path
+from calculators import views
 
-from . import views
-
-app_name = 'articles'
 urlpatterns = [
-    # articles
-    path('index/', views.index, name='index'),
-    path('greeting/', views.greeting, name='greeting'), # Django는 마지막에 ','를 붙이도록 권장함
-    path('dinner/', views.dinner, name='dinner'),
-    path('throw/', views.throw, name='throw'),
-    path('catch/', views.catch, name='catch'),
-    path('hello/<str:name>/', views.hello, name='hello'), # '<>'가 들어가면 변수역할 'str:'안적어도 문자열이 기본값임
+    path('admin/', admin.site.urls),
+    path('calculation/', views.calculation, name='calculation'),
+    path('result/', views.result, name='result'),
 ]

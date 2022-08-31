@@ -17,7 +17,8 @@ from django.urls import path
 
 from . import views
 
+app_name = 'pages'
 urlpatterns = [
     # pages
-    path('index/', views.index),
+    path('index/', views.index, name='index'),
 ]

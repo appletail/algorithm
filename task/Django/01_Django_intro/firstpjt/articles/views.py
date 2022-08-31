@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'articles/index.html')
 
 def greeting(request):
     family = ['Tom', 'Mom', 'Dad']
@@ -11,7 +11,7 @@ def greeting(request):
         'age': 25, 
         'family': family
     }
-    return render(request, 'greeting.html', context)
+    return render(request, 'articles/greeting.html', context)
 
 def dinner(request):
     foods = [
@@ -21,10 +21,10 @@ def dinner(request):
         '열무국수',
     ]
     context = {'foods': foods}
-    return render(request, 'dinner.html', context)
+    return render(request, 'articles/dinner.html', context)
 
 def throw(request):
-    return render(request, 'throw.html')
+    return render(request, 'articles/throw.html')
 
 def catch(request):
     message = request.GET.get('message')
@@ -36,10 +36,10 @@ def catch(request):
     print(request)
     print(type(request))
 
-    return render(request, 'catch.html', context)
+    return render(request, 'articles/catch.html', context)
 
 def hello(request, name):
     context = {
         'name': name
     }
-    return render(request, 'hello.html', context)
+    return render(request, 'articles/hello.html', context)
