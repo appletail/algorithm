@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ article.pk }}. {{ article.title }}</h1>
+
+  <p>내용: {{ article.content }}</p>
+  <br>
+  <p>작성일: {{ article.created_at }}</p>
+  <p>수정일: {{ article.updated_at }}</p>
+
+  <form action="{% url 'articles:edit' article.pk %}" method="POST">
+    {% comment %} article.pk(variable routing)를 사용해서 edit를 해라 {% endcomment %}
+      {% csrf_token %}
+      <input type="submit" value="EDIT">
+  </form>
+  <br>
+  <form action="{% url 'articles:delete' article.pk %}" method="POST">
+    {% comment %} article.pk 를 사용해서 delete를 해라 {% endcomment %}
+      {% csrf_token %}
+      <input type="submit" value="DELETE">
+  </form>
+  <br>
+  <a href="{% url 'articles:index' %}">뒤로가기</a>
+
+{% endblock content %}
+
+{% comment %} a태그는 R용 / form 태그는 CUD용 {% endcomment %}

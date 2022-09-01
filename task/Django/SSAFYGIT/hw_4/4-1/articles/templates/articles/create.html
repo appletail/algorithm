@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p class="d-flex justify-content-center" style="font-size: 300%">
+  성공적으로 글이 작성되었습니다.
+</p>
+<a href="{% url 'articles:index' %}">index</a>
+{% endblock content %}
