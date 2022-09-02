@@ -7,11 +7,12 @@
   <title>Document</title>
 </head>
 <body>
+  {% if select in drinks or select in foods %}
+  <p>{{ select|capfirst  }} 주문받았습니다!</p>
+  {% else %}
+    <p>{{ select|capfirst  }}은/는 주문이 불가합니다</p>
+  {% endif %}
 
-  <p>catch! I catch {{ third_catch }}!</p>
-  <form action="/second/" method="GET">
-    <p>throw! <input type="text" name="first"> <input type="submit" value="획"> </p>
-  </form>
-
+  
 </body>
 </html>
