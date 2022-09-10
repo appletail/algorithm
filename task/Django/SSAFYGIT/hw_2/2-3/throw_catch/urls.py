@@ -1,4 +1,4 @@
-"""project2 URL Configuration
+"""project3 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -16,9 +16,8 @@ Including another URLconf
 from django.urls import path
 from . import views
 
-app_name = 'travels'
+app_name = 'throw_catch'
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('create/', views.create, name='create'),
-    path('<int:pk>/', views.detail, name='detail'),
+    path('first/', views.first, name='first'),
+    path('second/', views.second, name='second'),
 ]
