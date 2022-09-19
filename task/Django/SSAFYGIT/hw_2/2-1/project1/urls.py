@@ -20,5 +20,6 @@ from prices import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('price/<str:thing>/<int:cnt>/', views.product),
+    path('test/', views.test),
     
 ]
