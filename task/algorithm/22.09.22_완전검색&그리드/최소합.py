@@ -29,17 +29,49 @@ for test_case in range(1, T + 1):
     dt = [(1, 0), (0, 1)]
     dfs(0, 0, 0)
     print(f'#{test_case}', minV)
+#
+#
+# # 교수님 답
+# def solve(r, c):
+#     if r == goalR and c == goalC:
+#         ...
+#         return
+#
+#     if r + 1 이 영역 안일 때:
+#         solve(r + 1, c)
+#     if c + 1 이 영역 안일 때:
+#         solve(r, c + 1)
+#
+# 이대로 풀면 시간초과가 나는데 백트래킹으로 해결해라
+from collections import deque
+
+dx = [1, 0]
+dy = [0, 1]
+
+def bfs(x, y, s):
+    minv = (n ** 2) * 10
+
+    q = deque()
+    q.append((x, y, s))  # q에 담고
+
+    while q:
+        x, y, s = q.popleft()
+        for d in range(2):
+            nx = x + dx[d]
+            ny = y + dy[d]
+            if 0 <= nx < n and 0 <= ny < n and s + arr[ny][nx] < minv:
+                if nx == n-1 and ny == n-1:
+                    minv = s + arr[ny][nx]
+                else:
+                    q.append((nx, ny, s + arr[ny][nx]))
+
+    return minv
 
 
-# 교수님 답
-def solve(r, c):
-    if r == goalR and c == goalC:
-        ...
-        return
+T = int(input())
 
-    if r + 1 이 영역 안일 때:
-        solve(r + 1, c)
-    if c + 1 이 영역 안일 때:
-        solve(r, c + 1)
-
-이대로 풀면 시간초과가 나는데 백트래킹으로 해결해라
+for tc in range(1, T+1):
+    n = int(input())
+    arr = [list(map(int, input().split())) for _ in range(n)]
+    ans = bfs(0,0,arr[0][0])
+    print(f'#{tc} {ans}')
