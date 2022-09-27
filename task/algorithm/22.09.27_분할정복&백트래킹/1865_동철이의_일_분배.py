@@ -23,10 +23,8 @@ for test_case in range(1, T + 1):
     jikwon = [list(map(int, input().split())) for _ in range(N)]
     result = 0
     visited = [0] * N
-    for i in range(N):
-        visited[i] = 1
-        boonbae(1, jikwon[0][i] / 100)
-        visited[i] = 0
+    boonbae(0, 1)
+
     print(f'#{test_case} {result * 100:.6f}')
 
 
