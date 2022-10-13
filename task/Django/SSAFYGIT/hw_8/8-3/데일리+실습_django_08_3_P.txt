@@ -1,0 +1,51 @@
+day8
+│
+└── day8_problem3
+    │
+    ├── project3
+    │   │   
+    │   ├── __init__.py
+    │   ├── asgi.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    │   
+    ├── travels
+    │   │   
+    │   ├── migrations/
+    │   ├── __init__.py
+    │   ├── admin.py
+    │   ├── apps.py
+    │   ├── forms.py
+    │   ├── models.py
+    │   ├── tests.py
+    │   ├── urls.py
+    │   ├── views.py
+    │   └── templates
+    │       │         
+    │       └── travels
+    │           │   
+    │           ├── create.html
+    │           ├── detail.html
+    │           ├── index.html
+    │           └── update.html
+    │       
+    ├── templates
+    │       │         
+    │       └── base.html
+    │       
+    ├── static
+    │       │         
+    │       └── images/
+    │       
+    ├── staticfiles/
+    │  
+    ├── media
+    │       │         
+    │       └── images
+    │       
+    ├── venv/
+    │       
+    ├── db.sqlite3
+    │  
+    └── manage.py
