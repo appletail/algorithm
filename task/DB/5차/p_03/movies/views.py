@@ -5,7 +5,7 @@ from django.views.decorators.http import (
     require_safe,
 )
 from django.contrib.auth.decorators import login_required
-from .models import Movie, Comment
+from .models import Movie, Comment, Hashtag
 from .forms import MovieForm, CommentForm
 
 
@@ -28,6 +28,10 @@ def create(request):
             movie = form.save(commit=False)
             movie.user = request.user
             movie.save()
+            for word in movie.content.split():
+                if word.startswith('#'):
+                    hashtag = Hashtag.objects.get_or_create(content=word)
+                    movie.hashtags.add(hashtag[0])
             return redirect("movies:detail", movie.pk)
     else:
         form = MovieForm()
@@ -68,7 +72,13 @@ def update(request, pk):
         if request.method == "POST":
             form = MovieForm(request.POST, instance=movie)
             if form.is_valid():
-                form.save()
+                movie = form.save()
+                movie.hashtags.clear()
+                for word in movie.content.split():
+                    if word.startswith('#'):
+                        hashtag = Hashtag.objects.get_or_create(content=word)
+                        movie.hashtags.add(hashtag[0])
+
                 return redirect("movies:detail", movie.pk)
         else:
             form = MovieForm(instance=movie)
@@ -116,3 +126,14 @@ def likes(request, movie_pk):
             movie.like_users.add(request.user)
         return redirect("movies:index")
     return redirect("accounts:login")
+
+
+@require_safe
+def hashtag(request, hash_pk):
+    hashtag = Hashtag.objects.get(pk=hash_pk)
+    movies = hashtag.movie_set.order_by('-pk')
+    context = {
+        'hashtag': hashtag,
+        'movies': movies,
+    }
+    return render(request, 'movies/hashtag.html', context)

@@ -2,6 +2,10 @@ from django.db import models
 from django.conf import settings
 
 
+class Hashtag(models.Model):
+    content = models.CharField(max_length = 20, unique=True)
+
+
 class Movie(models.Model):
     like_users = models.ManyToManyField(
         settings.AUTH_USER_MODEL, related_name="like_movies"
@@ -11,6 +15,7 @@ class Movie(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    hashtags = models.ManyToManyField(Hashtag, blank=True)
 
     def __str__(self):
         return self.title
@@ -25,3 +30,8 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.content
+
+
+
+
+    
