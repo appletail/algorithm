@@ -123,3 +123,19 @@ def likes(request, article_pk):
         }
         return JsonResponse(context)
     return redirect('accounts:login')
+
+
+@require_POST
+def comments_update(request, article_pk, comment_pk):
+    article = get_object_or_404(Article, pk=article_pk)
+    comment = get_object_or_404(Comment, pk=comment_pk)
+    if request.user == comment.user:
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            context = {
+                'articlePk': article.pk,
+                'commentPk': comment.pk,
+            }
+            return JsonResponse(context)
+    return redirect('articles:detail', article_pk)

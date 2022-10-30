@@ -1,3 +1,5 @@
+# detail.html
+```html
 {% extends 'base.html' %}
 
 {% block content %}
@@ -161,3 +163,27 @@
 
   </script>
 {% endblock script %}
+```
+
+# views.py
+```py
+@require_POST
+def comments_update(request, article_pk, comment_pk):
+    article = get_object_or_404(Article, pk=article_pk)
+    comment = get_object_or_404(Comment, pk=comment_pk)
+    if request.user == comment.user:
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            context = {
+                'articlePk': article.pk,
+                'commentPk': comment.pk,
+            }
+            return JsonResponse(context)
+    return redirect('articles:detail', article_pk)
+```
+
+# urls.py
+```py
+    path('<int:article_pk>/comments/<int:comment_pk>/update/', views.comments_update, name='comments_update'),
+```
