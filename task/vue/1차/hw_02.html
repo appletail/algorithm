@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="divTag">
+    <h1>첫 번째 입력 : {{ message1 }}</h1>
+    <input @input="onInputChange1" type="text">
+    <h1>두 번째 입력 : {{ message2 }}</h1>
+    <input @input="onInputChange2" type="text">
+    <h1>합산 입력 : {{ message1 }} {{ message2 }}</h1>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#divTag',
+      data: {
+        message1: '',
+        message2: '',
+      },
+      methods: {
+        onInputChange1: function (event) {
+          this.message1 = event.target.value
+        },
+        onInputChange2: function (event) {
+          this.message2 = event.target.value
+        }
+      }
+    })
+  </script>
+</body>
+</html>
