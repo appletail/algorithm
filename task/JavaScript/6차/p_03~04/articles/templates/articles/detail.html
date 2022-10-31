@@ -107,7 +107,7 @@
       const commentLi = event.target.parentElement
       const commentContent = commentLi.querySelector('span')
       commentLi.innerHTML = 
-      `<input type="text" value=${commentContent.innerText}>
+      `<input type="text" value='${commentContent.innerText}'>
       <button>update</button>`
 
       const updatedInput = commentLi.querySelector('input')
