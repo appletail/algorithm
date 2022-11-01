@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .checked {
+      text-decoration:line-through;
+      color: grey;
+    }
+  </style>
+</head>
+<body>
+  <h1>Todo List</h1>
+  <div id="app">
+    <input @input="todoInput" :value='todoContent' type="text">
+    <button @click="todoSubmit">+</button>
+    <ul>
+      <li v-for="todo in todoList">
+        <input type="checkbox" v-model="todo.isCheck"> <span :class="{checked:todo.isCheck}">{{ todo.content }}</span>
+      </li>
+    </ul>
+    <button @click="deleteChecked">완료 목록 삭제</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        todoList: [],
+        todoContent: '',
+      },
+      methods: {
+        todoSubmit: function (event) {
+          if (this.todoContent.trim() === '') {
+            window.alert('내용을 입력해 주세요!')
+          } else {
+            const inputValue = event.target.value
+            const tmp = {
+              isCheck: false,
+              content: this.todoContent,
+            }
+            this.todoList.push(tmp)
+            this.todoContent = ''
+          }
+        },
+
+        todoInput: function (event) {
+          this.todoContent = event.target.value
+        },
+
+        deleteChecked: function (event) {
+          this.todoList = this.todoList.filter((elem) => {
+            if (!elem.isCheck) {
+              return elem
+            }
+          });
+        }
+      },
+    })
+  </script>
+</body>
+</html>

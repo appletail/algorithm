@@ -9,7 +9,7 @@
 <body>
   <div id="app">
     <h1>Popular Movies</h1>
-    <div v-for="movie in movieinfo.results" v-if="filtering(movie)">
+    <div v-for="movie in filtering">
       <li> {{ movie.title }} </li>
     </div>
   </div>
@@ -419,11 +419,15 @@
     "total_results": 10000
   }
       },
-      methods: {
-        filtering: function (movie) {
-            if (movie.vote_average >= 8) {
-                return movie.title
-            } 
+      computed: {
+        filtering: function () {
+            const movieTitle = this.movieinfo.results.filter((element) => {
+                if (element.vote_average >= 8) {
+                    return element.title
+                }
+            });
+            
+            return movieTitle
         }
       }
     })
