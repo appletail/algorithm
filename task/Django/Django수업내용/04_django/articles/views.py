@@ -85,8 +85,10 @@ def edit(request, pk):
 
 def update(request, pk):
     article = Article.objects.get(pk=pk)
-    form = ArticleForm(request.POST, instance=article)  # instance를 통해 수정인지 생성인지 판단
-    # form = ArticleForm(data=request.POST, instance=article)  # 'data='는 순서가 첫번째라서 생략이 가능하지만 'instance=' 두번째가 아니라서 명시를 안하면 'files='로 인식되어버림
+    form = ArticleForm(request.POST, instance=article)  
+    # instance를 통해 수정인지 생성인지 판단
+    # form = ArticleForm(data=request.POST, instance=article)  
+    # 'data='는 순서가 첫번째라서 생략이 가능하지만 'instance=' 두번째가 아니라서 명시를 안하면 'files='로 인식되어버림
     if form.is_valid():
         form.save()
         return redirect('articles:detail', article.pk)
