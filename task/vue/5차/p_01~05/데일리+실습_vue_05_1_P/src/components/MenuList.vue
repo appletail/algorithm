@@ -1,6 +1,6 @@
 <template>
   <div class="menu-list">
-    <h1>1. 음료를 고르세요.</h1>
+    <h1 class="d-flex justify-center">1. 음료를 고르세요.</h1>
     <MenuListItem
       v-for="(menu, idx) in menuList"
       :key="`menu-${idx}`"
@@ -23,11 +23,10 @@ export default {
     },
   },
   methods: {
-    selectMenu: function () {},
+    // selectMenu: function () {},
   },
 }
 </script>
 
 <style>
-
 </style>

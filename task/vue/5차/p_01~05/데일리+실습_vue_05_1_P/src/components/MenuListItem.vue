@@ -1,8 +1,14 @@
 <template>
-  <div @click="selectMenu">
-    <img :src="menu.image" :alt="menu.title" style="width: 300px; height: 300px">
-    <p>{{ menu.title }}</p>
-    <p>{{ menu.price }}</p>
+  <div 
+    @click="selectMenu" 
+    id="menu"
+    class="items d-flex justify-space-between 
+           pa-2 ma-1 rounded-xl align-center"
+    :class="{ 'selected-item': menu.selected }"
+    >
+    <img :src="menu.image" :alt="menu.title" class="rounded-lg">
+    <span>{{ menu.title }}</span>
+    <span>{{ menu.price }}</span>
   </div>
 </template>
 
@@ -21,4 +27,8 @@ export default {
 </script>
 
 <style>
+  img{
+    width: 45px;
+    height: 45px;
+  }
 </style>
