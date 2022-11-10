@@ -58,6 +58,14 @@ router.beforeEach((to, from, next) => {
   if (to.name === 'happlossome' && from.name === 'happlower') {
     alert('이전 진화 단계로 돌아갈 수 없습니다.')
     return
+  } else if (to.name === 'happling' && from.name === 'happlossome') {
+    alert('이전 진화 단계로 돌아갈 수 없습니다.')
+    return
+  } else if (to.name === 'happeed' && from.name === 'happling') {
+    alert('이전 진화 단계로 돌아갈 수 없습니다.')
+    return
+  } else if (to.name === 'home' && from.name === 'happlower') {
+    alert('Home으로 돌아갑니다!')
   }
   next()
 })

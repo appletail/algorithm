@@ -1,0 +1,226 @@
+{
+  "data": {
+      "kind": "youtube#searchListResponse",
+      "etag": "MYZZwFO5w_mSRqVrtaEohaN3T2E",
+      "nextPageToken": "CAUQAA",
+      "regionCode": "KR",
+      "pageInfo": {
+          "totalResults": 812606,
+          "resultsPerPage": 5
+      },
+      "items": [
+          {
+              "kind": "youtube#searchResult",
+              "etag": "JEpQ8iPnRaGWPOuNF0CQDPN4WCM",
+              "id": {
+                  "kind": "youtube#video",
+                  "videoId": "cbuZfY2S2UQ"
+              },
+              "snippet": {
+                  "publishedAt": "2020-07-28T11:19:02Z",
+                  "channelId": "UClrzPAgzrAzdWbllvP4Oabg",
+                  "title": "[ 𝑷𝒍𝒂𝒚𝒍𝒊𝒔𝒕 ]  코딩할때 듣기 좋은 노래 • lofi type beat • 3 hours",
+                  "description": "3시간짜리 반복 재생입니다 광고는 제가 설정 한 것이 아니라 음원 저작권 때문에 자동 생성되는 광고입니다 모든 수익은 음원 ...",
+                  "thumbnails": {
+                      "default": {
+                          "url": "https://i.ytimg.com/vi/cbuZfY2S2UQ/default.jpg",
+                          "width": 120,
+                          "height": 90
+                      },
+                      "medium": {
+                          "url": "https://i.ytimg.com/vi/cbuZfY2S2UQ/mqdefault.jpg",
+                          "width": 320,
+                          "height": 180
+                      },
+                      "high": {
+                          "url": "https://i.ytimg.com/vi/cbuZfY2S2UQ/hqdefault.jpg",
+                          "width": 480,
+                          "height": 360
+                      }
+                  },
+                  "channelTitle": "yanu_",
+                  "liveBroadcastContent": "none",
+                  "publishTime": "2020-07-28T11:19:02Z"
+              }
+          },
+          {
+              "kind": "youtube#searchResult",
+              "etag": "BMYjyqkpTruEZYgZ-lWiWgOloTI",
+              "id": {
+                  "kind": "youtube#video",
+                  "videoId": "Xc1Le3CSdrM"
+              },
+              "snippet": {
+                  "publishedAt": "2021-01-21T10:00:13Z",
+                  "channelId": "UCkwegMjATseS7obo5GW_YsQ",
+                  "title": "[ 𝑷𝒍𝒂𝒚𝒍𝒊𝒔𝒕 ] 코딩할때 듣기 좋은 노래 | 3 hour playlist | Lofi hip hop mix ~ jazzhop ~ relax beats",
+                  "description": "Listen to this: 코딩할때 듣기 좋은 노래 : https://www.youtube.com/playlist?list=PLbf4lTYGCm5smdrMyQl5RdGnY3HV0GtSN ...",
+                  "thumbnails": {
+                      "default": {
+                          "url": "https://i.ytimg.com/vi/Xc1Le3CSdrM/default.jpg",
+                          "width": 120,
+                          "height": 90
+                      },
+                      "medium": {
+                          "url": "https://i.ytimg.com/vi/Xc1Le3CSdrM/mqdefault.jpg",
+                          "width": 320,
+                          "height": 180
+                      },
+                      "high": {
+                          "url": "https://i.ytimg.com/vi/Xc1Le3CSdrM/hqdefault.jpg",
+                          "width": 480,
+                          "height": 360
+                      }
+                  },
+                  "channelTitle": "Lofi 코딩",
+                  "liveBroadcastContent": "none",
+                  "publishTime": "2021-01-21T10:00:13Z"
+              }
+          },
+          {
+              "kind": "youtube#searchResult",
+              "etag": "a5B1xL0XRkzmogQasRxVVfmvDbA",
+              "id": {
+                  "kind": "youtube#video",
+                  "videoId": "qMwzWk81tVM"
+              },
+              "snippet": {
+                  "publishedAt": "2021-03-16T11:00:15Z",
+                  "channelId": "UC0Y0T9JpgIBbyGDjvy9PbOg",
+                  "title": "[inflaylist] 공부/작업 할 때 집중해서 듣기 좋은 음악✍ | 4 hour playlist | lofi, piano | 직장인 | 대학생 | 프리랜서 | 취준생",
+                  "description": "인프런 바로가기 : https://bit.ly/3cQLIgP 이번엔 4시간..! 열심히 공부하고 일하는 학생, 취준생, 직장인, 프리랜서 모두! 오늘도 화이팅 ...",
+                  "thumbnails": {
+                      "default": {
+                          "url": "https://i.ytimg.com/vi/qMwzWk81tVM/default.jpg",
+                          "width": 120,
+                          "height": 90
+                      },
+                      "medium": {
+                          "url": "https://i.ytimg.com/vi/qMwzWk81tVM/mqdefault.jpg",
+                          "width": 320,
+                          "height": 180
+                      },
+                      "high": {
+                          "url": "https://i.ytimg.com/vi/qMwzWk81tVM/hqdefault.jpg",
+                          "width": 480,
+                          "height": 360
+                      }
+                  },
+                  "channelTitle": "인프런 inflearn",
+                  "liveBroadcastContent": "none",
+                  "publishTime": "2021-03-16T11:00:15Z"
+              }
+          },
+          {
+              "kind": "youtube#searchResult",
+              "etag": "l-LUoP6d2Y3qXEPR2uWLCbHIGMQ",
+              "id": {
+                  "kind": "youtube#video",
+                  "videoId": "CfPxlb8-ZQ0"
+              },
+              "snippet": {
+                  "publishedAt": "2020-08-08T16:36:44Z",
+                  "channelId": "UCQtJT-hZA3FDTDHnQt9Qqsg",
+                  "title": "Work &amp; Study Lofi Jazz - Relaxing Smooth Background Jazz Music for Work, Study, Focus, Coding",
+                  "description": "Feel free to listen, share, and stream on your favorite places! Please subscribe to our channel and enjoy the latest release: ...",
+                  "thumbnails": {
+                      "default": {
+                          "url": "https://i.ytimg.com/vi/CfPxlb8-ZQ0/default.jpg",
+                          "width": 120,
+                          "height": 90
+                      },
+                      "medium": {
+                          "url": "https://i.ytimg.com/vi/CfPxlb8-ZQ0/mqdefault.jpg",
+                          "width": 320,
+                          "height": 180
+                      },
+                      "high": {
+                          "url": "https://i.ytimg.com/vi/CfPxlb8-ZQ0/hqdefault.jpg",
+                          "width": 480,
+                          "height": 360
+                      }
+                  },
+                  "channelTitle": "Musictag",
+                  "liveBroadcastContent": "none",
+                  "publishTime": "2020-08-08T16:36:44Z"
+              }
+          },
+          {
+              "kind": "youtube#searchResult",
+              "etag": "z7JCpzJYPGHlUccQ8HY21da94_M",
+              "id": {
+                  "kind": "youtube#video",
+                  "videoId": "4LIt_ICJyjk"
+              },
+              "snippet": {
+                  "publishedAt": "2021-02-25T10:00:19Z",
+                  "channelId": "UCkwegMjATseS7obo5GW_YsQ",
+                  "title": "[ 𝑷𝒍𝒂𝒚𝒍𝒊𝒔𝒕 ] 코딩 / 과제 할 때 집중 해서 듣기 좋은 음악 • Relaxing lofi beats to study music • Lofi Coding Beats",
+                  "description": "Listen to this: 코딩할때 듣기 좋은 노래 : https://www.youtube.com/playlist?list=PLbf4lTYGCm5smdrMyQl5RdGnY3HV0GtSN ...",
+                  "thumbnails": {
+                      "default": {
+                          "url": "https://i.ytimg.com/vi/4LIt_ICJyjk/default.jpg",
+                          "width": 120,
+                          "height": 90
+                      },
+                      "medium": {
+                          "url": "https://i.ytimg.com/vi/4LIt_ICJyjk/mqdefault.jpg",
+                          "width": 320,
+                          "height": 180
+                      },
+                      "high": {
+                          "url": "https://i.ytimg.com/vi/4LIt_ICJyjk/hqdefault.jpg",
+                          "width": 480,
+                          "height": 360
+                      }
+                  },
+                  "channelTitle": "Lofi 코딩",
+                  "liveBroadcastContent": "none",
+                  "publishTime": "2021-02-25T10:00:19Z"
+              }
+          }
+      ]
+  },
+  "status": 200,
+  "statusText": "",
+  "headers": {
+      "cache-control": "private",
+      "content-encoding": "gzip",
+      "content-length": "1687",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Thu, 10 Nov 2022 04:02:23 GMT",
+      "server": "scaffolding on HTTPServer2",
+      "vary": "Origin, X-Origin, Referer"
+  },
+  "config": {
+      "transitional": {
+          "silentJSONParsing": true,
+          "forcedJSONParsing": true,
+          "clarifyTimeoutError": false
+      },
+      "transformRequest": [
+          null
+      ],
+      "transformResponse": [
+          null
+      ],
+      "timeout": 0,
+      "xsrfCookieName": "XSRF-TOKEN",
+      "xsrfHeaderName": "X-XSRF-TOKEN",
+      "maxContentLength": -1,
+      "maxBodyLength": -1,
+      "env": {},
+      "headers": {
+          "Accept": "application/json, text/plain, */*"
+      },
+      "method": "get",
+      "url": "https://www.googleapis.com/youtube/v3/search",
+      "params": {
+          "key": "AIzaSyAAVXLpwBT6dkStlj18x7Z6XKQ6kI0enPo",
+          "part": "snippet",
+          "type": "video",
+          "q": "코딩노래"
+      }
+  },
+  "request": {}
+}
