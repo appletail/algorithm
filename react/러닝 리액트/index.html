@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Element 공부</title>
+</head>
+<body>
+  <!-- 타겟 컨테이너 -->
+  <div id="root"></div>
+
+  <!-- React와 ReactDOM 라이브러리(개발 버전) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+  <script>
+    // 순수 리액트와 자바스크립트 코드
+    const Dish = (props) => 
+    React.createElement(
+      'h1', 
+      {key: 'dish-01', className: 'headline'}, 
+      '구운 연어'
+    );
+    const Dessert = (props) => React.createElement(
+      'h2', 
+      {key: 'dessert-01'}, 
+      '코코넛 크림 파이'
+    );
+    const App = (props) => 
+    React.createElement(
+      React.Fragment,
+      null,
+      React.createElement(Dish),
+      React.createElement(Dessert)
+    )
+    const container = document.getElementById('root')
+    const reactDomRoot = ReactDOM.createRoot(container);
+    reactDomRoot.render(
+      React.createElement(
+        React.StrictMode,
+        null,
+        React.createElement(App)
+      )
+    )
+  </script>
+</body>
+</html>
