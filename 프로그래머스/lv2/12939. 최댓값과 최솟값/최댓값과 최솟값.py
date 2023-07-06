@@ -1,0 +1,1 @@
+solution = lambda s: f"{min(num_lst := list(map(int, s.split(' '))))} {max(num_lst)}"
