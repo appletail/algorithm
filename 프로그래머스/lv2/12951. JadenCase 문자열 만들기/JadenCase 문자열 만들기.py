@@ -1,0 +1,1 @@
+solution = lambda s: ' '.join(list(map(lambda x: x[0].upper() + x[1:].lower() if x.isalnum() else '' ,s.split(' '))))
