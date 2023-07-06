@@ -1,13 +1,29 @@
 def solution(plans):
-    plans = sorted(map(lambda x: [x[0], int(x[1][:2]) * 60 + int(x[1][3:]), int(x[2])], plans), key=lambda x: -x[1])
+    answer = []
+    incomplete = []
+    for i in plans:
+        hour, minute = list(map(int, i[1].split(':')))
+        i[1] = minute + hour * 60
 
-    lst = []
-    while plans:
-        x = plans.pop()
-        for i, v in enumerate(lst):
-            if v[0] > x[1]:
-                lst[i][0] += x[2]
-        lst.append([x[1] + x[2], x[0]])
-    lst.sort()
-
-    return list(map(lambda x: x[1], lst))
+    plans = sorted(plans, key= lambda x: x[1])
+     
+    for i in range(1, len(plans)):
+        remain_time = plans[i][1] - plans[i - 1][1] - int(plans[i - 1][2])
+        
+        if remain_time >= 0:
+            answer.append(plans[i - 1][0])
+            while incomplete and remain_time > 0:
+                remain_time_copy = remain_time - incomplete[-1][2]
+                incomplete[-1][2] -= remain_time
+                remain_time = remain_time_copy
+                if incomplete[-1][2] <= 0:
+                    answer.append(incomplete.pop()[0])
+        else:
+            plans[i - 1][2] = -remain_time
+            incomplete.append(plans[i - 1])
+    else:
+        answer.append(plans[-1][0])
+    
+    answer += [i[0] for i in incomplete][::-1]
+    
+    return answer
