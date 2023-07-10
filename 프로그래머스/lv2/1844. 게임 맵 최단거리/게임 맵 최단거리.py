@@ -14,7 +14,7 @@ def solution(maps):
         if r == n - 1 and c == m - 1:
             answer = visited[n - 1][m - 1]
             break
-            
+        
         for dr, dc in [[0, 1], [0, -1], [1, 0], [-1, 0]]:
             nr, nc = r + dr, c + dc
             if 0 <= nr < n and 0 <= nc < m:
