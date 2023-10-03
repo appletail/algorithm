@@ -13,5 +13,4 @@ def solution(scoville, K):
     if not scoville or scoville[0] < K:
         answer = -1
     
-    
     return answer
