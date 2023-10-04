@@ -28,6 +28,8 @@
 #             heapq.heappush(jobs, tmp)
     
 #     return answer // length
+
+# 다른 답
 import heapq
 from collections import deque
 
