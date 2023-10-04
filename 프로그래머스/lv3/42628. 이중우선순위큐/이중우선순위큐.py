@@ -33,15 +33,12 @@ class DoubleHeap:
         
         return result
         
-    
     def printMinMax(self):
         if self.length == 0:
             return [0, 0]
         else:
             return [self.popNum(1), self.popNum(-1)]
             
-    
-    
     def act(self, operation, idx):
         order, num = operation.split(' ')
         num = int(num)
@@ -56,6 +53,5 @@ def solution(operations):
     
     for i in range(len(operations)):
         heap.act(operations[i], i)
-    
     
     return heap.printMinMax()
