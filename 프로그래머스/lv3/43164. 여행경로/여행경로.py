@@ -61,10 +61,10 @@ def solution(tickets):
 
     for ticket in tickets:
         graph[ticket[0]].append(ticket[1])
-        
+
     for value in graph.values():
         value.sort()
-    
+
     answer = dfs(graph, len(tickets), 'ICN', ['ICN'])
 
     return answer
