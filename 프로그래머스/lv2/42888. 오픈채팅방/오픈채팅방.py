@@ -8,9 +8,10 @@ def solution(record):
         'Enter': '님이 들어왔습니다.',
         'Leave': '님이 나갔습니다.',
     }
-    
+    a = 'asdf asdf asdf'
+
     for r in record:
-        splited_record = r.split(' ')
+        splited_record = r.split()
         if splited_record[0] != 'Leave':
             users[splited_record[1]] = splited_record[2]
         
