@@ -14,11 +14,6 @@ def dfs(start):
             distance = cDistance
             node = cNode
 
-        if parents[cNode]:
-            p, w = parents[cNode]
-            if not visited[p]:
-                visited[p] = 1
-                stack.append([p, cDistance + w])
         for c, w in children[cNode]:
             if not visited[c]:
                 visited[c] = 1
@@ -28,7 +23,6 @@ def dfs(start):
 
 
 V = int(input())
-parents = [0] * (V + 1)
 children = [[]for _ in range(V + 1)]
 
 for _ in range(1, V + 1):
@@ -37,7 +31,6 @@ for _ in range(1, V + 1):
     for i in range(1, len(node) - 1, 2):
         c, w = node[i], node[i + 1]
         children[p].append([c, w])
-        parents[c] = [p, w]
 
 node1, tmp = dfs(1)
 node2, answer = dfs(node1)
