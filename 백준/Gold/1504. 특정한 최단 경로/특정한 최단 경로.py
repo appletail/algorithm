@@ -8,15 +8,17 @@ def dijkstra(s):
 
     heap = []
     heapq.heappush(heap, [distance[s], s])
-    visited = [0] * (N + 1)
+
     while heap:
         curDist, curNode = heapq.heappop(heap)
-        visited[curNode] = 1
+
+        if distance[curNode] < curDist:
+            continue
+
         for nodeTo, dist in graph[curNode]:
-            if not visited[nodeTo]:
-                if distance[nodeTo] > (newDist:=curDist+dist):
-                    distance[nodeTo] = newDist
-                    heapq.heappush(heap, [newDist, nodeTo])
+            if distance[nodeTo] > (newDist:=curDist+dist):
+                distance[nodeTo] = newDist
+                heapq.heappush(heap, [newDist, nodeTo])
 
     return distance
 
