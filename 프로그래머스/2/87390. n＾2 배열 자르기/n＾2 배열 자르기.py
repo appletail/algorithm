@@ -1,21 +1,10 @@
 def solution(n, left, right):
     answer = []
-    start = left // n + 1
-    cnt = 0
-    for i in range(start, n+1):
-        j_start = left % n + 1 if i == start else 1
-        for j in range(j_start, n+1):
-            if i >= j:
-                answer.append(i)
-            else:
-                answer.append(j)
-            cnt += 1
-            if cnt == right - left + 1:
-                break
-        else:
-            continue
-        break
-                
+    for i in range(left, right + 1):
+        quo = i // n
+        re = i % n
+        if quo < re:
+            quo, re = re, quo
+        answer.append(quo + 1)
+
     return answer
-
-
