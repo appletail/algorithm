@@ -17,3 +17,5 @@ def solution(n, left, right):
         break
 
     return answer
+
+
