@@ -1,5 +1,21 @@
 def solution(n, left, right):
     answer = []
-    for i in range(left,right+1):
-        answer.append(max(i//n,i%n)+1)
+    start = left // n + 1
+    cnt = 0
+    for i in range(start, n+1):
+        j_start = left % n + 1 if i == start else 1
+        for j in range(j_start, n+1):
+            if i >= j:
+                answer.append(i)
+            else:
+                answer.append(j)
+            cnt += 1
+            if cnt == right - left + 1:
+                break
+        else:
+            continue
+        break
+                
     return answer
+
+
