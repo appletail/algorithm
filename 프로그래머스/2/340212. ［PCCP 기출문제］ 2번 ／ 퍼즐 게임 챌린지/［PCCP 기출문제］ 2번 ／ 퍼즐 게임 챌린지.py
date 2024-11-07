@@ -6,8 +6,10 @@ def is_possible(level, diffs, times, limit):
         if diffs[idx] > level:
             time_passed += (time_prev+times[idx]) * (diffs[idx]-level)
         time_passed += times[idx]
+        
         if time_passed > limit:
             return False
+        
         time_prev = times[idx]
     
     return True
@@ -25,6 +27,5 @@ def solution(diffs, times, limit):
             level_max = level_cur - 1
         else:
             level_min = level_cur + 1
-
 
     return answer
