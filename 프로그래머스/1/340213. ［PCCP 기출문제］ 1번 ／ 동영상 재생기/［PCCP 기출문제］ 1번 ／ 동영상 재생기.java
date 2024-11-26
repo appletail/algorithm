@@ -16,18 +16,17 @@ class Solution {
         int op_start_second = to_second(op_start);
         int op_end_second = to_second(op_end);
         
-        if (pos_second < 10) {pos_second = 0;}
-        else if (pos_second > video_len_second-10) {pos_second = video_len_second;}
-        if (op_start_second <= pos_second && pos_second <= op_end_second) {pos_second = op_end_second;}
+        if (pos_second < 10) pos_second = 0;
+        else if (pos_second > video_len_second-10) pos_second = video_len_second;
+        if (op_start_second <= pos_second && pos_second <= op_end_second) pos_second = op_end_second;
         
-        
-        for (String command: commands) {            
-            if (command.equals("next")) {pos_second += 10;}
-            else if (command.equals("prev")) {pos_second -= 10;}
-
-            if (pos_second < 10) {pos_second = 0;}
-            else if (pos_second > video_len_second-10) {pos_second = video_len_second;}
-            if (op_start_second <= pos_second && pos_second <= op_end_second) {pos_second = op_end_second;}
+        for (String command: commands) {
+            if (command.equals("next")) pos_second += 10;
+            else if (command.equals("prev")) pos_second -= 10;
+            
+            if (pos_second < 10) pos_second = 0;
+            else if (pos_second > video_len_second-10) pos_second = video_len_second;
+            if (op_start_second <= pos_second && pos_second <= op_end_second) pos_second = op_end_second;
         }
         
         return to_minute(pos_second);
