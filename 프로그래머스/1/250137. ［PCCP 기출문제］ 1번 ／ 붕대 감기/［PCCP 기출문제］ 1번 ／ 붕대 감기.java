@@ -78,25 +78,45 @@ class Monster {
     }
 }
 
-class Solution {
-    public int solution(int[] bandage, int health, int[][] attacks) {
-        Bandage playerBandage = new Bandage(bandage);
-        Health playerHealth = new Health(health);
-        Monster monster = new Monster(attacks);
-        
+class Game {
+    private Bandage bandage;
+    private Health playerHealth;
+    private Monster monster;
+    
+    public Game(Bandage bandage, Health playerHealth, Monster monster) {
+        this.bandage = bandage;
+        this.playerHealth = playerHealth;
+        this.monster = monster;
+    }
+    
+    public void play() {
         int lastAttackTime = monster.getLastAttackTime();
         int time = 0;
         while (time < lastAttackTime) {
             time += 1;
             if (time != monster.nextAttackTime()) {
-                playerHealth.heal(playerBandage.heal());
+                playerHealth.heal(bandage.heal());
             } else {
                 playerHealth.damage(monster.attack());
-                playerBandage.breakHealStreak();
+                bandage.breakHealStreak();
                 if (playerHealth.getHealth() == -1) break;
             }
         }
-        
+    }
+    
+    public int getResult() {
         return playerHealth.getHealth();
+    }
+}
+
+class Solution {
+    public int solution(int[] bandage, int health, int[][] attacks) {
+        Bandage playerBandage = new Bandage(bandage);
+        Health playerHealth = new Health(health);
+        Monster monster = new Monster(attacks);
+        Game game = new Game(playerBandage, playerHealth, monster);
+        game.play();
+        
+        return game.getResult();
     }
 }
