@@ -16,9 +16,9 @@ def hideAndSeek(cur, dest):
                     visited[dv][0] = visited[v][0] + 1
                     visited[dv][1] = visited[v][1]
                     q.append(dv)
-                else:
-                    if visited[dv][0] == visited[v][0]+1:
-                        visited[dv][1] += visited[v][1]
+                elif visited[dv][0] == visited[v][0] + 1:
+                    visited[dv][1] += visited[v][1]
+
 
 N, K = map(int, input().split())
 for answer in hideAndSeek(N, K):
