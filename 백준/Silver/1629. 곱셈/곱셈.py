@@ -7,7 +7,7 @@ def ABmodC(A, B, C):
     if B % 2 == 0:
         return (temp ** 2) % C
     else:
-        return ((temp ** 2) * (A % C)) % C
+        return ((temp ** 2) * A) % C
 
 A, B, C = map(int, input().split())
 
