@@ -3,14 +3,12 @@ sys.setrecursionlimit(1000000)
 input = sys.stdin.readline
 
 
-def mkTree(current, parent, treeCnt):
+def mkTree(current, parent):
     treeCnt[current] += 1
     for child in Ulst[current]:
         if child != parent:
-            tree[current].append(child)
-            treeCnt[current] += mkTree(child, current, treeCnt)[child]
-
-    return treeCnt
+            mkTree(child, current)
+            treeCnt[current] += treeCnt[child]
 
 
 N, R, Q = map(int, input().split())
@@ -22,9 +20,8 @@ for _ in range(N-1):
 
 Qlst = [int(input()) for _ in range(Q)]
 
-tree = [[] for _ in range(N+1)]
 treeCnt = [0] * (N+1)
-mkTree(R, 0, treeCnt)
+mkTree(R, 0)
 
 for q in Qlst:
     print(treeCnt[q])
