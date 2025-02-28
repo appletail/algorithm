@@ -21,7 +21,11 @@ for A, B, C in nodes:
     if rootA != rootB:
         answer += C
         cnt += 1
-        union[rootA] = rootB
+        if rootA > rootB:
+            union[rootA] = rootB
+        else:
+            union[rootB] = rootA
+            
         if cnt == V-1:
             break
             
