@@ -15,11 +15,14 @@ nodes.sort(key=lambda x: x[2])
 union = [i for i in range(V+1)]
 
 answer = 0
-
+cnt = 0
 for A, B, C in nodes:
     rootA, rootB = findRoot(A), findRoot(B)
     if rootA != rootB:
         answer += C
+        cnt += 1
         union[rootA] = rootB
-
+        if cnt == V-1:
+            break
+            
 print(answer)
