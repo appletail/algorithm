@@ -7,24 +7,21 @@ const nums = input[1].split(' ').map(Number)
 
 let [left, right] = [-1, 0]
 let curSum = nums[right]
-let cnt = 1
 let answer = Infinity
 
 while (right < nums.length) {
   if (curSum >= S) {
-    answer = Math.min(answer, cnt)
+    answer = Math.min(answer, right-left)
   }
 
   if (left+1 === right || curSum < S) {
     right += 1
     if (right < nums.length) {
-      cnt += 1
       curSum += nums[right]
     }
   } else if (curSum >= S) {
     left += 1
     if (left < right)
-      cnt -= 1
       curSum -= nums[left]
   }
 }
