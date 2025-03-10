@@ -2,9 +2,7 @@ const fs = require("fs")
 const filePath = process.platform === "linux" ? "dev/stdin" : "백준/input.txt"
 const input = fs.readFileSync(filePath).toString().trim().split("\n")
 
-const sudoku = input.map((v) => {
-  return v.trim().split("").map(Number)
-})
+const sudoku = input.map((v) => v.trim().split("").map(Number))
 
 const rows = Array.from(new Array(9), () => new Object())
 const columns = Array.from(new Array(9), () => new Object())
@@ -12,34 +10,7 @@ const squares = Array.from(new Array(9), () => new Object())
 const blanks = []
 
 const findSquareIdx = (i, j) => {
-  let idx = 0
-  if (0 <= i && i < 3) {
-    if (0 <= j && j < 3) {
-      idx = 0
-    } else if (3 <= j && j < 6) {
-      idx = 1
-    } else {
-      idx = 2
-    }
-  } else if (3 <= i && i < 6) {
-    if (0 <= j && j < 3) {
-      idx = 3
-    } else if (3 <= j && j < 6) {
-      idx = 4
-    } else {
-      idx = 5
-    }
-  } else {
-    if (0 <= j && j < 3) {
-      idx = 6
-    } else if (3 <= j && j < 6) {
-      idx = 7
-    } else {
-      idx = 8
-    }
-  }
-
-  return idx
+  return Math.floor(i / 3) * 3 + Math.floor(j / 3)
 }
 
 for (let i = 0; i < 9; i++) {
