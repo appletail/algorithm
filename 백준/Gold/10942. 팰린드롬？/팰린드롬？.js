@@ -24,9 +24,9 @@ for (let j = 0; j < N; j++) {
   }
 }
 
-let answer = ""
+let answer = []
 for (let i = 3; i < M + 3; i++) {
   const [S, E] = input[i].split(" ").map(Number)
-  answer += `${dp[S - 1][E - 1]}\n`
+  answer.push(dp[S - 1][E - 1])
 }
-console.log(answer)
+console.log(answer.join("\n"))
