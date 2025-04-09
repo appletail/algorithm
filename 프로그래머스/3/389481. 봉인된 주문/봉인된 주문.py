@@ -25,6 +25,8 @@ def solution(n, bans):
     for ban in bans:
         if findN(ban) <= n:
             n += 1
+        else:
+            break
 
     tmp = []
     mkWord(n-1, tmp)
