@@ -1,10 +1,13 @@
 def solution(citations):
-    citations.sort(reverse=True)  # 내림차순 정렬
-    h_index = 0
-
-    for i, citation in enumerate(citations):
-        if citation >= i + 1:
-            h_index = i + 1
+    answer = 0
+    citations.sort()
+    n = len(citations)
+    
+    for i in range(1, n+1):
+        h = citations[-i]
+        if h >= i:
+            answer = i
         else:
             break
-    return h_index
+
+    return answer
